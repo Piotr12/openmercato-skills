@@ -6,6 +6,7 @@ One card per skill, with its parameters and the companion skills it works with. 
 
 | Skill | Type | What it does |
 |---|---|---|
+| [`om-doctor`](om-doctor.md) | 🧑‍💻 | Read-only, text-only diagnosis: next actions, safe parallel work, and mismatches between code, specs, backlog, and delivery records. |
 | [om-auto-create-pr](om-auto-create-pr.md) | 🤖 | Takes a free-form task brief end-to-end to a labeled, self-reviewed PR. Resumable. |
 | [om-auto-create-pr-loop](om-auto-create-pr-loop.md) | 🤖 | Advanced create-pr for long spec builds: run folder, one commit per step, checkpoint verification. |
 | [om-auto-continue-pr](om-auto-continue-pr.md) | 🤖 | Resumes an in-progress PR from the first unchecked step of its tracking plan. |
