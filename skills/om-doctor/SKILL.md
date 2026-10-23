@@ -28,7 +28,34 @@ repository or tracker project the user means.
    read `references/rules.md`. Missing configuration or tracker access reduces
    coverage; it never triggers setup. These steps grant no write permission.
 
-1. **Build an evidence map.** Read the current branch, HEAD, worktree status,
+1. **Size the investigation, then build an evidence map.** For both modes,
+   inspect the repository layout and record inventory before reading deeply.
+   Account for your remaining context window; reserve room for synthesis and
+   checking evidence. Do not load the whole repository or long tracker histories
+   into one context. Multiple large modules, long specs/diffs, or truncated reads
+   are signals to split the investigation before evidence is lost.
+
+   When the evidence will not fit comfortably, divide it among a small set of
+   subagents by bounded module or workstream. Each assignment must connect its
+   specs, backlog records, code, and tests rather than inspect one artifact type
+   in isolation. Pass the mode, exact scope, observed revision, relevant rules,
+   and the same read-only, text-only, and untrusted-content boundaries. Allocate
+   tracker records within the run's total limits, not a new allowance per agent.
+   Require a compact return: inspected scope, evidence paths/lines or links,
+   findings, uncertainties, and dependencies that cross assignment boundaries.
+   Do not let subagents recursively delegate, write reports, or start fixes.
+
+   Keep only the scope map and concise findings in the main context. Reconcile
+   duplicate findings, conflicting evidence, and cross-area dependencies yourself;
+   inspect the cited evidence where it changes a recommendation. In `now-what`,
+   separate investigation scopes do not prove that implementation can run in
+   parallel. In `loose-ends`, check links across scopes before reporting a missing
+   requirement or implementation. If a subagent lacks access to the same revision
+   or local edits, state the gap. If subagents are unavailable, use bounded serial
+   passes only while context permits; otherwise report partial coverage and the
+   next scope to inspect. Never claim completeness from omitted or lost context.
+
+   Read the current branch, HEAD, worktree status,
    staged and unstaged diffs, relevant source and tests, and available local
    history. Distinguish local edits, committed work, open PRs, merged work, and
    released work. Read configured specs and run plans, the product brief and

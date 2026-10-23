@@ -25,6 +25,12 @@ up to 30 issues and 30 PRs. Missing configuration or tracker access does not
 trigger setup; the report uses local evidence and states what it could not check.
 The skill reads existing test results but does not execute tests or builds.
 
+Both modes account for the agent's remaining context window. Large investigations
+are split among bounded, read-only subagents by module or workstream. The main
+agent reconciles their evidence and cross-area dependencies before reporting.
+The scan limits apply to the whole run, not to each subagent. If delegation or
+context is insufficient, the report states partial coverage and what remains.
+
 ## Works with
 
 Unlike `om-help`, which routes a question to an installed skill, `om-doctor`
